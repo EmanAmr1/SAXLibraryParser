@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-public class SaxParserHandler extends DefaultHandler {
+public class SaxParserBookHandler extends DefaultHandler {
 
     Book currentBook = null;
     List<Book> bookList = new ArrayList<>();
@@ -22,9 +22,7 @@ public class SaxParserHandler extends DefaultHandler {
 
         if (qName.equalsIgnoreCase("book")) {
             currentBook = new Book();
-
         }
-
         currentValue.setLength(0);
     }
 

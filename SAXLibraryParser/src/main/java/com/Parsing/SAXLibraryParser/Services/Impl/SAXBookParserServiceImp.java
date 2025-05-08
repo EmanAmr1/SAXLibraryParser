@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class SAXLibraryParserServiceImp implements SAXLibraryParserService {
+public class SAXBookParserServiceImp implements SAXLibraryParserService {
 
     List<File> xmlFiles = new ArrayList<>();
 
@@ -42,7 +42,7 @@ public class SAXLibraryParserServiceImp implements SAXLibraryParserService {
             for (File xmlfile : xmlFiles) {
                 SAXParserFactory f = SAXParserFactory.newInstance();
                 SAXParser p = f.newSAXParser();
-                SaxParserHandler h = new SaxParserHandler();
+                SaxParserBookHandler h = new SaxParserBookHandler();
                 p.parse(xmlfile, h);
 
 
@@ -53,7 +53,7 @@ public class SAXLibraryParserServiceImp implements SAXLibraryParserService {
                 }
             }
         } catch (Exception e) {
-            System.out.println("Error parsing XML file");
+            System.out.println("Error parsing XML file" + e);
         }
 
     }
